@@ -1,0 +1,58 @@
+body {
+   background-color: #808080; 
+  text-align: center;   
+    
+}
+#content {
+    background-color: #fff;
+    width: 900px;
+ 
+    text-align: left; 
+
+}
+
+#node_page_full_group_page_content {
+    opacity: .6; 
+    height: auto; 
+    overflow-x: scroll; 
+}
+.field-name-field-subtitle {
+    color:green;  
+    
+}
+#node_page_full_group_header {
+ 
+    background-color: white;
+    width:600px; 
+    float: left;
+    Xdisplay: none;   
+}
+.field-name-field-lead-paragraph {
+    Xcolor: blue;
+    font-size: larger;  
+}
+.field-name-body {
+    
+   column-gap:100px;
+-moz-column-gap:100px; /* Firefox */
+-webkit-column-gap:100px; 
+    
+ column-width:300px;
+-moz-column-width:300px; /* Firefox */
+-webkit-column-width:300px;
+height: 500px; 
+width: auto; 
+
+
+}
+.field-collection-item-field-author-information {
+    width: 200px;
+    color: magenta;
+    XXfloat: right; 
+}
+.field-name-field-iconography {
+
+background-color: black;
+color: white;  
+
+}
