@@ -58,19 +58,38 @@
   top:0px; 
 }
 .nextButton, .previousButton {
-    Xbottom: 10px;
-    cursor: pointer;  
+   
+    cursor: pointer;
+    
+    position: absolute;
+   
+}
+.previousButton {
+   
+    
+
+   left: 10px; 
+   top: 0px; 
 }
 .nextButton {
     
 
     position: absolute;
-   right: 10px; 
+   right: 10px;
+    top: 0px;  
 }
 .navBar {
-    background-color: #ededed; 
-    padding: 5px 10px 5px 10px;
-    Xmargin: 15px;  
+    color: #808080; 
+    border-top: 1px solid #ccc;  
+    position:relative;
+    margin-top: 10px;  
+    Xpadding: 5px 10px 5px 10px;
+    text-align: center;   
+}
+
+#pageCount 
+{
+    text-align: center; 
 }
 
 
@@ -113,6 +132,7 @@ body.toolbar-drawer {
     color:red;  
     
 }
+
 #node_page_full_group_header {
     box-sizing:border-box;  
     width:660px; 
@@ -161,6 +181,8 @@ width: auto;
     float: left;
     
 }
+
+
     
 
 
@@ -226,7 +248,10 @@ right: 115px !important;
     display: none; 
     
     }
-
+  .field-collection-container {
+    border-bottom: none !important; 
+    margin-bottom: 0px !important;   
+    }
 
 
 
@@ -238,6 +263,8 @@ right: 115px !important;
 
     
     }
+
+  
 
 .field-name-field-iconography {
     overflow: visible; 

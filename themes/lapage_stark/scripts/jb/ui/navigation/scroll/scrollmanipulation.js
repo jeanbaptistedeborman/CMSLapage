@@ -12,7 +12,7 @@
 
 function ScrollManipulation(target_$, uiElements) {"use strict";
 
-	var n, context = this;
+	var n, context = this, page_num = 0, total_num,  containerWidth = target_$.width();
 
 	var evaluateActiveArrows = function() {
 
@@ -60,41 +60,55 @@ function ScrollManipulation(target_$, uiElements) {"use strict";
 		trace('clickButton'); 
 
 	};
-
-	this.swipe = function (direction_int) {
-	    trace("swipe");
-	    trace("target_$.width()" + target_$.width());
-	    var n, maxScroll = target_$[0].scrollWidth - target_$.width(), minScroll = 0;
-
-	    var scrollLeft = target_$.scrollLeft() - (target_$.width() * direction_int);
-
-	    trace(scrollLeft + " / " + maxScroll);
+	this.getPageString = function () {
+	
+	    total_num = Math.ceil(target_$[0].scrollWidth / containerWidth);
+	    return (Number(1 + page_num) + " / " + total_num);
 
 
-	    if (scrollLeft >= maxScroll) {
+	}
+    this.onScroll = function (){
+        
 
-	        uiElements.rightButton_$.css("display", "none"); 
 
-	    } else {
-	        uiElements.rightButton_$.css("display", "inline"); 
+    }
 
-	    }
-	    if (scrollLeft <= minScroll) {
+    this.swipe = function (direction_int) {
+        containerWidth = target_$.width();
 
-	        //uiElements.leftButton_$.hide();
+        var n, maxScroll = target_$[0].scrollWidth - containerWidth, minScroll = 0;
 
-	    } else {
-	        //uiElements.leftButton_$.show();
+        var scrollLeft = target_$.scrollLeft() - (containerWidth * direction_int);
+        page_num = Math.floor(scrollLeft / containerWidth);
+       
+        scrollLeft = Math.floor(scrollLeft / containerWidth) * containerWidth;
 
-	    }
 
-	    //trace('scrollLeft : ' + scrollLeft);
+        if (scrollLeft >= maxScroll) {
 
-	    target_$.stop().animate({
-	        scrollLeft: scrollLeft
-	    }, 500);
+            uiElements.rightButton_$.css("display", "none");
 
-	};
+        } else {
+            uiElements.rightButton_$.css("display", "inline");
+
+        }
+        if (scrollLeft <= minScroll) {
+
+           uiElements.leftButton_$.hide();
+
+        } else {
+            uiElements.leftButton_$.show();
+
+        }
+
+        //trace('scrollLeft : ' + scrollLeft);
+
+        target_$.stop().animate({
+            scrollLeft: scrollLeft
+        }, 300);
+        context.onScroll(); 
+
+    };
 
 }
 

@@ -36,20 +36,33 @@ function trace(string) {
 
 
             $(".field-collection-view-links a, .action-links-field-collection-add a").addClass("button").css("position", "relative").css("top", "-=100");
-            $(".action-links-field-collection-add a").text("Add new picture")
-
-            $('#content').prepend(printButton_$).prepend(editButton_$);
-            navbar_$.prepend(nextButton_$).prepend(previousButton_$);
-            navbar_$.insertAfter($('#node_page_full_group_page_content'));
+            $(".action-links-field-collection-add a").text("Add a new picture")
 
 
-
-            var uiElements = new ScrollManipulation.UIElements;
+             var uiElements = new ScrollManipulation.UIElements;
             uiElements.leftButton_$ = previousButton_$;
             uiElements.rightButton_$ = nextButton_$;
 
             var scrollManipulation = new ScrollManipulation($("#node_page_full_group_page_content"), uiElements);
 
+            $('#content').prepend(printButton_$).prepend(editButton_$);
+            navbar_$.append ("<div id='pageCount'>"+ scrollManipulation.getPageString () + "</div>").append(nextButton_$).append(previousButton_$); 
+            
+            navbar_$.insertAfter($('#node_page_full_group_page_content'));
+
+
+
+           
+            scrollManipulation.onScroll = function (){
+                
+                var pageCount_str = this.getPageString ();
+
+
+               $('#pageCount').text (pageCount_str); 
+                
+
+
+            }
 
 
             editButton_$.text("edit");
