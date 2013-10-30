@@ -41,17 +41,19 @@
 	background-color:#dfdfdf;
 }
 .button:active {
-    position: absolute;
+    Xposition: absolute;
     top: 1px;
 }
 .button {
-    position:absolute; 
+    Xposition:absolute; 
 }
 .printButton {
+    position:absolute; 
   right: 0px;
   top:0px; 
 }
 .editButton {
+    position:absolute; 
   right: 100px;
   top:0px; 
 }
@@ -81,7 +83,7 @@
 body {
    background-color: #ccc; 
   text-align: center;
-      width: 990px; 
+      width: 1000px; 
    margin:0px auto 0px auto;   
     
 }
@@ -92,16 +94,18 @@ body.toolbar-drawer {
 #content {
     background-color: #fff;
     width: 990px;
-    top: 0px; 
+    top: 0px;
+    width: 990px; 
     
     text-align: left;
-    Xpadding: 0px 5px 0px 5px;  
+    padding: 0px 5px 0px 5px;  
 
 }
 
 #node_page_full_group_page_content {
     height: auto; 
     overflow-x: hidden;
+    margin:0px; 
     background-color: #ffffff; 
  
 }
@@ -176,7 +180,8 @@ width: auto;
 
     #main {
 
-   position: relative; 
+   position: relative;
+   text-align: left;  
     
     }
 
@@ -185,6 +190,25 @@ width: auto;
         margin: 10px 10px 10px 10px;
         background-color: white;
     }
+
+.field-name-field-iconography .field-item {
+   position:relative;  
+    
+}
+.field-name-field-iconography .button {
+    position: absolute;  
+
+top:5px; 
+right: 5px; 
+
+}
+
+
+.field-name-field-iconography .button:first-child {
+
+right: 115px !important; 
+
+}
 
 .group-icon-right-column .field-label {
     display: inline;

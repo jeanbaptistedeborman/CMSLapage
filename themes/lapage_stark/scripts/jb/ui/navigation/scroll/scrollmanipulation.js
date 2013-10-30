@@ -19,16 +19,7 @@ function ScrollManipulation(target_$, uiElements) {"use strict";
 	};
 
 
-    function trace(string) {
-	"use strict"; 
-
-	if ( typeof (console) !== "undefined" && console.log !== undefined) {
-		try {
-			console.log.apply(console, arguments);
-		} catch (e) {
-		}
-	}
-}
+    
 
 	for (n in uiElements) {
 		var uiElement_$ = uiElements[n];
@@ -71,7 +62,7 @@ function ScrollManipulation(target_$, uiElements) {"use strict";
 	};
 
 	this.swipe = function (direction_int) {
-	    trace("swipe"); 
+	    trace("swipe");
 	    trace("target_$.width()" + target_$.width());
 	    var n, maxScroll = target_$[0].scrollWidth - target_$.width(), minScroll = 0;
 
@@ -82,10 +73,10 @@ function ScrollManipulation(target_$, uiElements) {"use strict";
 
 	    if (scrollLeft >= maxScroll) {
 
-	        uiElements.rightButton_$.hide();
+	        uiElements.rightButton_$.css("display", "none"); 
 
 	    } else {
-	        uiElements.rightButton_$.show();
+	        uiElements.rightButton_$.css("display", "inline"); 
 
 	    }
 	    if (scrollLeft <= minScroll) {

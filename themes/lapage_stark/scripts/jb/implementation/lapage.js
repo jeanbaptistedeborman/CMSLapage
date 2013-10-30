@@ -1,10 +1,21 @@
+function trace(string) {
+	"use strict"; 
+
+	if ( typeof (console) !== "undefined" && console.log !== undefined) {
+		try {
+			console.log.apply(console, arguments);
+		} catch (e) {
+		}
+	}
+}
+
 (function ($) {
     Drupal.behaviors.myBehavior = {
 
 
         attach: function (context, settings) {
 
-
+            
 
 
             var navbar_$ = $("<div class='navBar'>"),
@@ -24,8 +35,8 @@
             //$('#content').prepend(nextButton_$).prepend(previousButton_$).prepend(editButton_$).prepend(printButton_$);
 
 
-            $(".field-collection-view-links a, .action-links-field-collection-add a").addClass("button").css("position", "relative").css("top", "-=100"); 
-            $(".action-links-field-collection-add a").css("width", "150").text("Add another picture")
+            $(".field-collection-view-links a, .action-links-field-collection-add a").addClass("button").css("position", "relative").css("top", "-=100");
+            $(".action-links-field-collection-add a").text("Add new picture")
 
             $('#content').prepend(printButton_$).prepend(editButton_$);
             navbar_$.prepend(nextButton_$).prepend(previousButton_$);
@@ -44,11 +55,8 @@
             editButton_$.text("edit");
             editButton_$.click(
                 function () {
-                    //var string = ; 
                     var url_str = window.location.href.split("#")[0] + "#overlay=node/9/edit";
                     window.location.href = url_str;
-
-                    //alert("edit");
                 });
             printButton_$.on("click", function () {
 
@@ -57,12 +65,23 @@
 
             });
 
-            //var pictureContainer_$ = $("<div>");
-            //pictureContainer_$.addClass("pictureContainer");
-            //$(".field-name-field-iconography").insertAfter (  $("#content")); 
+            $(".field-name-field-iconography").insertAfter($("#content"));
+
+            /*PATCH : 
+            PLACES BUTTONS CORRECTLY in Firefox */
 
 
-            //pictureContainer_$.append($(".field-name-field-iconography"));
+            $(".action-links-field-collection-add a").attr ('style', '').width ('150').insertBefore ('.field-name-field-iconography').css ("left", "0px"); 
+
+
+
+            $(".field-name-field-iconography > .field-items > .field-item").each (function (index, element) {
+                var element_$ = $(element);
+                 
+
+                element_$.prepend(element_$.find(".button").attr ("style", ""));
+
+            })
 
 
         }
