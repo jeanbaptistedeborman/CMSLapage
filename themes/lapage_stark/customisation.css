@@ -156,8 +156,7 @@ width: auto;
 
 
 }
-.field-collection-item-field-author-information {
-    width: 200px;
+.field-collection-item-field-author-information  {
     color: black; 
 }
 
@@ -248,6 +247,13 @@ right: 115px !important;
     border-bottom: none !important; 
     margin-bottom: 0px !important;   
     }
+
+.vertical-tabs {
+    display: none; 
+
+
+}
+
 
 
 

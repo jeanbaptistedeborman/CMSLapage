@@ -22,6 +22,12 @@ function trace(string) {
 
             }
 
+           // $(".form-item").hide ();
+            //alert ($(".form-item").length);  
+            
+            //append ($(".form-submit")); 
+
+   
 
 
            var navbar_$ = $("<div class='navBar'>"),
