@@ -6,6 +6,9 @@ core = 7.x
 stylesheets[all][] = layout.css
 stylesheets[all][]   = customisation.css
 
+scripts[] = scripts/jb/implementation/lapage.js
+scripts[] = scripts/jb/ui/navigation/scroll/scrollmanipulation.js
+
 ; Information added by drupal.org packaging script on 2013-04-03
 version = "7.22"
 project = "drupal"

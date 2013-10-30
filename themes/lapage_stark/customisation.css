@@ -1,41 +1,132 @@
+.button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #ccc;
+	display:inline-block;
+	color:#000000;
+	font-family:arial;
+	font-size:12px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:80px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+    cursor: pointer; 
+}
+.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}
+.button:active {
+    position: absolute;
+    top: 1px;
+}
+.button {
+    position:absolute; 
+}
+.printButton {
+  right: 0px;
+  top:0px; 
+}
+.editButton {
+  right: 100px;
+  top:0px; 
+}
+.nextButton, .previousButton {
+    Xbottom: 10px;
+    cursor: pointer;  
+}
+.nextButton {
+    
+
+    position: absolute;
+   right: 10px; 
+}
+.navBar {
+    background-color: #ededed; 
+    padding: 5px 10px 5px 10px;
+    Xmargin: 15px;  
+}
+
+
+
+
+
+
+
+
 body {
-   background-color: #808080; 
-  text-align: center;   
+   background-color: #ccc; 
+  text-align: center;
+      width: 990px; 
+   margin:0px auto 0px auto;   
     
 }
+body.toolbar-drawer {
+    padding-top: 0px; 
+}
+
 #content {
-    background-color: #6cde4b;
-    width: 900px;
- 
-    text-align: left; 
+    background-color: #fff;
+    width: 990px;
+    top: 0px; 
+    
+    text-align: left;
+    Xpadding: 0px 5px 0px 5px;  
 
 }
 
 #node_page_full_group_page_content {
-    opacity: .6; 
     height: auto; 
-    overflow-x: scroll; 
+    overflow-x: hidden;
+    background-color: #ffffff; 
+ 
 }
 .field-name-field-subtitle {
     color:red;  
     
 }
 #node_page_full_group_header {
- 
-    background-color: yellow;
-    width:600px; 
+    box-sizing:border-box;  
+    width:660px; 
     float: left;
-    Xdisplay: none;   
+    margin: 0px 30px 0px 0px;
+   
+  
 }
 .field-name-field-lead-paragraph {
-    Xcolor: blue;
     font-size: larger;  
+    
 }
 .field-name-body {
-    
-   column-gap:100px;
--moz-column-gap:100px; /* Firefox */
--webkit-column-gap:100px; 
+     
+      
+   column-gap:30px;
+-moz-column-gap:30px; /* Firefox */
+-webkit-column-gap:30px; 
     
  column-width:300px;
 -moz-column-width:300px; /* Firefox */
@@ -47,12 +138,97 @@ width: auto;
 }
 .field-collection-item-field-author-information {
     width: 200px;
-    color: black;
-    XXfloat: right; 
+    color: black; 
 }
-.field-name-field-iconography {
 
-background-color: black;
-color: white;  
+
+   
+
+
+.group-icon-left-column {
+    display: block; 
+    
+   float: left;
+ 
+   margin: 0px 30px 0px 0px;    
+    }
+.group-icon-right-column {
+    width: 600px; 
+    float: left;
+    
+}
+    
+
+
+    .field-name-field-iconography {
+    background-color: black;
+    
+   
+    color: white;
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;  
+ 
+    
+    }
+
+
+
+    #main {
+
+   position: relative; 
+    
+    }
+
+
+    .button {
+        margin: 10px 10px 10px 10px;
+        background-color: white;
+    }
+
+.group-icon-right-column .field-label {
+    display: inline;
+    width:auto;  
+    
+    
+}
+.action-links-field-collection-add li {
+   list-style-type: none;
+   left: 0px;  
+    
+}
+
+#toolbar, .tabs,  .breadcrumb  {
+    display: none; 
+    
+    }
+
+
+
+
+@media print  {
+    #node_page_full_group_header  {
+    float: none;
+    height:auto;
+  
+
+    
+    }
+
+.field-name-field-iconography {
+    overflow: visible; 
+    
+    
+    
+}
+
+    .button, .navBar {
+    display: none !important; 
+    } 
+
+    .field-name-body {
+        height: auto;
+        color: red;
+    }
 
 }
