@@ -95,10 +95,6 @@
 
 
 
-
-
-
-
 body {
    background-color: #ccc; 
   text-align: center;
@@ -279,7 +275,8 @@ right: 115px !important;
 
     .field-name-body {
         height: auto;
-        color: red;
+        font-size: larger; 
+   
     }
 
 }

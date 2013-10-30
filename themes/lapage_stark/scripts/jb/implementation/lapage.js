@@ -16,23 +16,29 @@ function trace(string) {
         attach: function (context, settings) {
 
             
+            if (!$('body').hasClass ("logged-in") && !$('body').hasClass ("page-user") ) {
+                
+                location.href = "/?q=user";
+
+            }
 
 
-            var navbar_$ = $("<div class='navBar'>"),
-            nextButton_$ = $("<span class='buttonX nextButton'>"),
-           previousButton_$ = $("<span class='buttonX previousButton'>"),
+
+           var navbar_$ = $("<div class='navBar'>"),
+           nextButton_$ = $("<span class='nextButton'>"),
+           previousButton_$ = $("<span class='previousButton'>"),
            printButton_$ = $("<span class='button printButton'>"),
            editButton_$ = $("<span class='button editButton'>");
 
+          
+          
 
 
-
-            //alert($().jquery);
             printButton_$.text("print")
 
             nextButton_$.text("next >");
             previousButton_$.text("< previous");
-            //$('#content').prepend(nextButton_$).prepend(previousButton_$).prepend(editButton_$).prepend(printButton_$);
+
 
 
             $(".field-collection-view-links a, .action-links-field-collection-add a").addClass("button").css("position", "relative").css("top", "-=100");
@@ -45,7 +51,7 @@ function trace(string) {
 
             var scrollManipulation = new ScrollManipulation($("#node_page_full_group_page_content"), uiElements);
 
-            $('#content').prepend(printButton_$).prepend(editButton_$);
+            $('.logged-in #content').prepend(printButton_$).prepend(editButton_$);
             navbar_$.append ("<div id='pageCount'>"+ scrollManipulation.getPageString () + "</div>").append(nextButton_$).append(previousButton_$); 
             
             navbar_$.insertAfter($('#node_page_full_group_page_content'));
