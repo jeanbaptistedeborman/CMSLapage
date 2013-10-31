@@ -210,7 +210,7 @@
  *   );
  * @endcode
  */
-$databases = array( 'default' => array( 'default' => array ('database' => 'acquiadrupal7856', 'username' => 'ad7user856', 'password' => '^b?q7Q-9Luw?', 'host' => 'localhost', 'driver' => 'mysql', 'port' => '3306', 'prefix' => '' ) ) );
+$databases = array( 'default' => array( 'default' => array ('database' => 'acquiadrupal7856', 'username' => 'ad7user856', 'password' => '^b?q7Q-9Luw?', 'host' => 'localhost', 'driver' => 'mysql', 'port' => '3306', 'port' => '3306', 'port' => '3306', 'prefix' => '' ) ) );
 
 /**
  * Access control for update.php script.
